@@ -21,27 +21,65 @@ var example = angular.module('starter', ['ionic', 'ngCordova'])
 
 example.controller("ExampleController", function ($scope, $cordovaBluetoothSerial) {
     $scope.devices_ = [];
+    $scope.status = "Init";
     $scope.getDevices = function () {
         bluetoothSerial.list(ondevicelist, generateFailureFunction);
+        bluetoothSerial.subscribe("\n", onmessage, generateFailureFunction("Subscribe Failed"));
+
     }
-    
+
     $scope.selectDevice = function (id) {
-        console.log("dev: 2"+JSON.stringify(id));
+        $scope.status = "Open " + id.id;
+        bluetoothSerial.connect(id.id, onconnect, ondisconnect);
+    }
+
+    $scope.sendData = function () {
+        $scope.status = "send ";
+        var success = function () {
+            $scope.$apply(function () {
+                $scope.status = "send done: ";
+            });
+        };
+
+        bluetoothSerial.write("Hello", success);
+    }
+
+    onmessage = function (message) {
+        console.log("Got: " + message)
+        $scope.$apply(function () {
+            $scope.status = "Got: " + message;
+        });
+    }
+    onconnect = function () {
+        console.log("Connected")
+        $scope.$apply(function () {
+            $scope.status = "Connected ";
+        });
+    }
+    ondisconnect = function (reason) {
+        $scope.$apply(function () {
+            var details = "";
+            if (reason) {
+                details += ": " + JSON.stringify(reason);
+            }
+            $scope.status = "Disconnected " + reason;
+        });
+        console.log("Disconnected " + reason);
     }
 
     ondevicelist = function (devices) {
         $scope.$apply(function () {
             $scope.devices_ = [];
-           // console.log(JSON.stringify(devices));
+            // console.log(JSON.stringify(devices));
             if (devices.length === 0) {
-                $scope.devices_.push("No Bluetooth Devices");
+                $scope.status = "No Bluetooth Devices";
             } else {
                 devices.forEach(function (device) {
 
                     $scope.devices_.push(device);
                     console.log(device.address);
                 });
-                
+                $scope.status = "List";
 
                 //$scope.devices_ = devices;
             }

@@ -7,6 +7,9 @@
         "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactField.js",
         "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactError.js",
         "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactFieldType.js",
-        "/home/pcs/dev/BluetoothTest/plugins/com.megster.cordova.bluetoothserial/www/bluetoothSerial.js"
+        "/home/pcs/dev/BluetoothTest/plugins/com.megster.cordova.bluetoothserial/www/bluetoothSerial.js",
+        "/home/pcs/dev/BluetoothTest/platforms/android/assets/www/js/app.js",
+        "/home/pcs/dev/BluetoothTest/gulpfile.js",
+        "/home/pcs/dev/BluetoothTest/hooks/after_prepare/010_add_platform_class.js"
     ]
 }

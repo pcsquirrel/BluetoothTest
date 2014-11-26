@@ -30,7 +30,10 @@
             <h1 class="title">Ionic Blank Starter</h1>
             <button class="button" ng-click="createContact()">New</button>
         </ion-header-bar>
+        
         <ion-content>
+            <div class="title">{{status}}</div>
+            <button ng-click="sendData()">send</button>
             <ion-list>
                 <ion-item ng-repeat="device in devices_" ng-click="selectDevice({id:device.address})">
                     {{device.name}}<br/>
