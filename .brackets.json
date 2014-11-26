@@ -1,0 +1,12 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ios/contacts.js",
+        "/home/pcs/dev/BluetoothTest/plugins/com.megster.cordova.bluetoothserial/examples/Chat/www/js/index.js",
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactAddress.js",
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactFindOptions.js",
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactField.js",
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactError.js",
+        "/home/pcs/dev/BluetoothTest/plugins/org.apache.cordova.contacts/www/ContactFieldType.js",
+        "/home/pcs/dev/BluetoothTest/plugins/com.megster.cordova.bluetoothserial/www/bluetoothSerial.js"
+    ]
+}
